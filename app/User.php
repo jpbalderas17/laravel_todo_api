@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the todo of the user
+     * 
+     * @return Todo
+     */
+    public function todo()
+    {
+        return $this->hasMany("App\Todo");
+    }
 }
