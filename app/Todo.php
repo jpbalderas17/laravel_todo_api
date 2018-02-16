@@ -14,7 +14,6 @@ class Todo extends Model
     protected $fillable = [
         'title', 'note'
     ];
-
     /**
      * Get the Items of the todo
      * 
