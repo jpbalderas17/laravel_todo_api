@@ -19,4 +19,5 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->group(function(){
     Route::resource('todos', 'TodoController');
+    Route::resource('todo_items', 'TodoItemController');
 });

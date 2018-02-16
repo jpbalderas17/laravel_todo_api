@@ -38,6 +38,11 @@ class User extends Authenticatable
         return $this->hasMany("App\Todo");
     }
 
+    public function todoItems()
+    {
+        return $this->hasManyThrough("App\TodoItem", "App\Todo");
+    }
+
     public function findForPassport($username) {
         
         return $this->where('username', $username)->first();
