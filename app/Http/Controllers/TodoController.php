@@ -43,14 +43,15 @@ class TodoController extends Controller
         $title = $request->get('title');
         $note = $request->get('note');
         $todo = new Todo;
-        $todo->user_id = $request->user->id;
+        $todo->user_id = $request->user()->id;
+        
         $todo = $todo->fill(
             [
             'title'=>$title,
             'note'=> $note
             ]
         );
-
+        
         $todo->save();
         return new TodoResource($todo);
     }
